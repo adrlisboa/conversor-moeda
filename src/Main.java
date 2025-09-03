@@ -7,6 +7,7 @@ public class Main {
         ConversorMoeda convMoeda = new ConversorMoeda();
 
         int opcao;
+
         do {
             System.out.println("===== CONVERSOR DE UNIDADES =====");
             System.out.println("1 - Real para Dólar");
@@ -19,15 +20,28 @@ public class Main {
 
             switch (opcao) {
                 case 1:
-                    System.out.println("Digite o valor em Real: R$ ");
+                    /*System.out.println("Digite o valor em Real: R$ ");
                     double real = sc.nextDouble();
-                    System.out.printf("Resultado: $ %.2f USD\n", convMoeda.realParaDolar(real));
+                    System.out.printf("Resultado: $ %.2f USD\n", convMoeda.realParaDolar(real));*/
+                    System.out.println("Digite a cotação do Dólar hoje (1 USD = ? BRL): ");
+                    double taxaDolar = sc.nextDouble();
+                    System.out.println("Digite o valor em Reais: R$ ");
+                    double real = sc.nextDouble();
+                    System.out.printf("Resultado: $ %.2f USD\n", real / taxaDolar);
                     break;
 
                 case 2:
-                    System.out.println("Digite o valor em Dólar: $ ");
+                    /*System.out.println("Digite o valor em Dólar: $ ");
                     double dolar = sc.nextDouble();
-                    System.out.printf("Resultado: R$ %.2f BRL\n", convMoeda.dolarParaReal(dolar));
+                    System.out.printf("Resultado: R$ %.2f BRL\n", convMoeda.dolarParaReal(dolar));*/
+                    System.out.println("Digite a cotação do atual Dólar (1 USD = ? BRL): $ ");
+                    taxaDolar = sc.nextDouble();
+
+                    System.out.println("Digite o valor em Dólares: $ ");
+                    double dolar = sc.nextDouble();
+
+                    double resultado = dolar * taxaDolar;
+                    System.out.printf("Resultado: R$ %.2f\n", resultado);
                     break;
 
                 case 3:

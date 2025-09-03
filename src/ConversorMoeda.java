@@ -1,12 +1,12 @@
 public class ConversorMoeda {
-    double taxaDolar = 5.47;
-    double taxaEuro = 6.36;
+    double taxaDolar;
+    double taxaEuro;
 
-    public double realParaDolar(double valor) {
+    public double realParaDolar(double valor, double taxa) {
         return valor / taxaDolar;
     }
 
-    public double dolarParaReal(double valor) {
+    public double dolarParaReal(double valor, double taxa) {
         return valor * taxaDolar;
     }
 
